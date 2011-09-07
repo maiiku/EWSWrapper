@@ -45,7 +45,7 @@ switch ($to_test){
 		       null, 
 		       strtotime('noon + 1 hour'),
 		       strtotime('noon + 2 hours'), 
-		       "dobra chińska gdzie mają tofu", 
+		       "Test subject", 
 		       array('email1@test.com',
 					 'email2@test.com',
 					 'email3@test.com')
