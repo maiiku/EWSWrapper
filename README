@@ -1,0 +1,26 @@
+/* EWSWrapper README file
+ * ====================================================
+ * @author Michal Korzeniowski <mko_san@lafiel.net>
+ * @version 0.1
+ * @date 09-2011
+ * ==================================================*/
+
+ EWSWrapper provides wrapper functions for easy usage of 
+ basic tasks with EWS-PHP written by James Armes that in
+ turn serve as a wrapper fore EWS API.
+ 
+ Currently EWSWrapper provides following functionality:
+ - Operations on Calendar Events: 
+	- add,
+	- update, 
+	- delete, 
+	- list
+ - Operations on Tasks:
+ 	- add,
+	- update, 
+	- delete, 
+	- list
+- Operations of Folders:
+	- list
+ 
+Please see test.php for example usages of EWSWrapper.
