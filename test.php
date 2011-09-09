@@ -57,13 +57,13 @@ switch ($to_test){
     //test event editing
     case 'calendar_edit':
 	$response = $ews->editCalendarEvent(
-			$id="AAMkADMyZmU2MWY4LWFiYTQtNDI1MC05Njg4LTZlYTNhZDEyMTcyZgBGAAAAAACrLZ0u9XUlTblYQop7sEBsBwA1mZ7/RHM2TJiZHLRlnhdzAAANH+9gAAA1mZ7/RHM2TJiZHLRlnhdzAAYyRuOFAAA=", 
-			$ckey="DwAAABYAAAA1mZ7/RHM2TJiZHLRlnhdzAAYyUBK6", 
-			$subject="Sample title",
-			$body="Sample description", 
-			$bodytype="TEXT",
-			$start=strtotime("3 PM"), 
-			$end=strtotime("4 PM")		    
+			"AAMkADMyZmU2MWY4LWFiYTQtNDI1MC05Njg4LTZlYTNhZDEyMTcyZgBGAAAAAACrLZ0u9XUlTblYQop7sEBsBwA1mZ7/RHM2TJiZHLRlnhdzAAANH+9gAAA1mZ7/RHM2TJiZHLRlnhdzAAYyRuOFAAA=", 
+			"DwAAABYAAAA1mZ7/RHM2TJiZHLRlnhdzAAYyUBK6", 
+			"Sample title",
+			"Sample description", 
+			"TEXT",
+			strtotime("3 PM"), 
+			strtotime("4 PM")		    
 		    );
 	print_r($response);
 	die();    

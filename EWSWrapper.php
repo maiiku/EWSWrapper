@@ -88,7 +88,7 @@ Class EWSWrapper {
 	 * 
 	 * @return object response
 	 */
-	public function addCalendarEvent($subject, $body, $start, $end, array $anttendees, $on_behalf=null, $location=null, $allday = false, $bodyType="Text", $category="default"){
+	public function addCalendarEvent($subject, $body, $start, $end, array $anttendees, $on_behalf=null, $location=null, $allday = false, $bodyType="TEXT", $category="default"){
 		$request->SendMeetingInvitations = 'SendToAllAndSaveCopy';
 		$request->SavedItemFolderId->DistinguishedFolderId->Id =EWSType_DistinguishedFolderIdNameType::CALENDAR;
 		if($on_behalf)
@@ -109,7 +109,7 @@ Class EWSWrapper {
 		$request->Items->CalendarItem->LegacyFreeBusyStatus = 'Free';
 		$request->Items->CalendarItem->Location = $location;
 		$request->Items->CalendarItem->Categories->String = $category;
-		$request->Items->CalendarItem->Body->BodyType = $bodyType;
+		$request->Items->CalendarItem->Body->BodyType = constant("EWSType_BodyTypeResponseType::".$bodyType);
 		$request->Items->CalendarItem->Body->_ = $body;
 		for($i = 0; $i < count($anttendees); $i++){
 			$request->Items->CalendarItem->RequiredAttendees->Attendee[$i]->Mailbox->EmailAddress = $anttendees[$i];
@@ -136,7 +136,7 @@ Class EWSWrapper {
 	 * 
 	 * @return object response
 	 */
-	public function editCalendarEvent($id=null, $ckey=null, $subject=null, $body=null, $bodytype="TEXT", $start=null, $end=null, $location=null, array $anttendees=array(), $allday=null, $category=null){
+	public function editCalendarEvent($id, $ckey, $subject=null, $body=null, $bodytype="TEXT", $start=null, $end=null, $location=null, array $anttendees=array(), $allday=null, $category=null){
 
 		$updates = array(
 			'calendar:Start' =>  date('c', $start),
@@ -240,7 +240,7 @@ Class EWSWrapper {
 	 * 
 	 * @return object response
 	 */	
-	public function addTask($subject, $on_behalf, $due, $body=null, $reminderdue=null, $reminderStart="30", $importance="Normal", $sensitivity="Personal", $bodytype="TEXT", $category="default"){
+	public function addTask($subject, $on_behalf, $due, $body=null, $reminderdue=null, $reminderStart="30", $importance="NORMAL", $sensitivity="NORMAL", $bodytype="TEXT", $category="default"){
 
 		$request = new EWSType_CreateItemType();
 		$request->SavedItemFolderId->DistinguishedFolderId->Id =EWSType_DistinguishedFolderIdNameType::TASKS;
@@ -251,9 +251,9 @@ Class EWSWrapper {
 			$request->Items->Task->Body->BodyType = constant("EWSType_BodyTypeResponseType::".$bodytype);
 			$request->Items->Task->Body->_ = $body;
 		}
-		$request->Items->Task->Sensitivity = $sensitivity;
+		$request->Items->Task->Sensitivity = constant("EWSType_SensitivityChoicesType::".$sensitivity);
 		$request->Items->Task->Categories->String = $category;
-		$request->Items->Task->Importance = $importance;
+		$request->Items->Task->Importance = constant("EWSType_ImportanceChoicesType::".$importance);
 		if($reminderdue){
 		    $request->Items->Task->ReminderDueBy = date('c',  $reminderdue);
 		    $request->Items->Task->ReminderMinutesBeforeStart = $reminderStart;
