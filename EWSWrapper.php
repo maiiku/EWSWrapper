@@ -4,6 +4,7 @@
  * @author Michal Korzeniowski <mko_san@lafiel.net>
  * @version 0.1
  * @date 08-2011
+ * @website http://ewswrapper.lafiel.net/
  * ====================================================
  * Desciption
  * Provides API wrapper for easy usage of basic tasks 

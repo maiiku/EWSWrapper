@@ -3,6 +3,7 @@
  * @author Michal Korzeniowski <mko_san@lafiel.net>
  * @version 0.1
  * @date 09-2011
+ * @website http://ewswrapper.lafiel.net/
  * ==================================================*/
 
  EWSWrapper provides wrapper functions for easy usage of 
@@ -22,5 +23,7 @@
 	- list
 - Operations of Folders:
 	- list
- 
+
+Documentaion can be found @ http://ewswrapper.lafiel.net/ 
+
 Please see test.php for example usages of EWSWrapper.
