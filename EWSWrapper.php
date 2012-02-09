@@ -90,7 +90,8 @@ Class EWSWrapper {
 	 * @return object response
 	 */
 	public function addCalendarEvent($subject, $body, $start, $end, array $anttendees, $on_behalf=null, $location=null, $allday = false, $bodyType="TEXT", $category="default"){
-		$request->SendMeetingInvitations = 'SendToAllAndSaveCopy';
+		$request = new EWSType_CreateItemType();
+                $request->SendMeetingInvitations = 'SendToAllAndSaveCopy';
 		$request->SavedItemFolderId->DistinguishedFolderId->Id =EWSType_DistinguishedFolderIdNameType::CALENDAR;
 		if($on_behalf)
 			$request->SavedItemFolderId->DistinguishedFolderId->Mailbox->EmailAddress = $on_behalf;
@@ -138,7 +139,7 @@ Class EWSWrapper {
 	 * @return object response
 	 */
 	public function editCalendarEvent($id, $ckey, $subject=null, $body=null, $bodytype="TEXT", $start=null, $end=null, $location=null, array $anttendees=array(), $allday=null, $category=null){
-
+                $request = new EWSType_UpdateItemType();
 		$updates = array(
 			'calendar:Start' =>  date('c', $start),
 			'calendar:End'	=> date('c', $end),
@@ -392,7 +393,7 @@ Class EWSWrapper {
 	    $request->AffectedTaskOccurrences = EWSType_AffectedTaskOccurrencesType::ALL_OCCURRENCES;
 	    $response = $this->ews->DeleteItem($request);
 	    
-	    return $response;	    
+	    return $response;
 	}
 	
 	//======================================

@@ -12,7 +12,7 @@
  
  Currently EWSWrapper provides following functionality:
  - Operations on Calendar Events: 
-	- add,
+	- add, 
 	- update, 
 	- delete, 
 	- list
