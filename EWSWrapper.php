@@ -422,10 +422,9 @@ Class EWSWrapper {
 			$request->ItemShape = $itemProperties;
 			
 			// Set the itemID of the desired item to retrieve
-			$iem_id = new EWSType_ItemIdType();
-			$iem_id->Id = $id;
-			
-			$request->ItemIds->ItemId = $id;
+			$item_id = new EWSType_ItemIdType();
+			$item_id->Id = $id;
+			$request->ItemIds->ItemId = $item_id;
 			
 			//  Send the listing (find) request and get the response
 			$response = $this->ews->GetItem($request);			
