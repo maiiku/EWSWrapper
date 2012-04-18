@@ -2,15 +2,15 @@
 /* EWSWrapper Class
  * ====================================================
  * @author Michal Korzeniowski <mko_san@lafiel.net>
- * @version 0.1
- * @date 08-2011
+ * @version 0.12
+ * @date 04-2012
  * @website http://ewswrapper.lafiel.net/
  * ====================================================
  * Desciption
  * Provides API wrapper for easy usage of basic tasks 
  * with EWS-PHP:
  * - Calendar events: add, update, delete, list
- * - Taks	    	: add, update, delete, list
+ * - Taks	    : add, update, delete, list
  * - Messages	    : no support as of yet
  * - Folders	    : list
  * 
