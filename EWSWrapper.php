@@ -485,8 +485,10 @@ Class EWSWrapper {
 			$request->ParentFolderIds = new EWSType_NonEmptyArrayOfBaseFolderIdsType();
 			$request->ParentFolderIds->DistinguishedFolderId = new EWSType_DistinguishedFolderIdType();
 			$request->ParentFolderIds->DistinguishedFolderId->Id = constant("EWSType_DistinguishedFolderIdNameType::".$type);
-			if($on_behalf)
+			if($on_behalf) {
+				$request->ParentFolderIds->DistinguishedFolderId->Mailbox = new StdClass;
 				$request->ParentFolderIds->DistinguishedFolderId->Mailbox->EmailAddress = $on_behalf;			
+			}
 	
 			//make the call
 			//print_r($request); //die();
