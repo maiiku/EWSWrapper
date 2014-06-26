@@ -13,6 +13,8 @@
 /**
  * Load Core Classes
  */
+ 
+require "EWS_Exception.php";
 include "EWSType.php";
 include "NTLMSoapClient.php";
 include "NTLMSoapClient/Exchange.php";
