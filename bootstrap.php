@@ -19,6 +19,6 @@ include "NTLMSoapClient/Exchange.php";
 /**
  * Load All Types
  */
-foreach ( glob( "EWSType/*.php" ) as $filename ) {
+foreach ( glob( dirname(__FILE__) . "/EWSType/*.php" ) as $filename ) {
     include $filename ;
 }
